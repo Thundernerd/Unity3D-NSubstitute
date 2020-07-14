@@ -27,6 +27,26 @@ openupm add net.tnrd.nsubstitute
 
 If you have questions, feature requests or feedback on NSubstitute please [raise an issue](https://github.com/nsubstitute/NSubstitute/issues) on our project site. All questions are welcome via our project site, but for "how-to"-style questions you can also try [StackOverflow with the \[nsubstitute\] tag](https://stackoverflow.com/tags/nsubstitute), which often leads to very good answers from the larger programming community. StackOverflow is especially useful if your question also relates to other libraries that our team may not be as familiar with (e.g. NSubstitute with Entity Framework). You can also head on over to the [NSubstitute discussion group](https://groups.google.com/group/nsubstitute) if you prefer.
 
+## Unity setup
+
+This project has been tested with Unity **2019.1.0f2** and **2019.4.1f1**. The setup is slightly different among Unity versions.
+
+The code you want to use for Unit Tests are required to be accompanied by an Assembly Definition. If you are unfamiliar with how to set these up please follow the [Unity Manual](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html).
+Please make sure you are familiar with the **Unity Test Framework**. The manual is available [over here](https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/index.html).
+
+**Note**: Not applicable to Unity 2019.1.0f2 (and maybe some versions before 2019.4.1f1)
+
+You need to make sure that reference (in no particular order) the following assembly references:
+- Castle.Core.dll
+- NSubstitute.dll
+- System.Threading.Tasks.Extensions.dll
+
+Your assembly references overview should look somewhat like this.
+
+![assembly references overview](./~Documentation/assembly_references.png)
+
+After you've applied the settings you should be good to go to use NSubstitute within your Unit Tests. 
+
 ## Basic use
 
 Let's say we have a basic calculator interface:
