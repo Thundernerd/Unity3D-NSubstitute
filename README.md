@@ -10,14 +10,14 @@ openupm add net.tnrd.nsubstitute
 
 3. Installing from git through the package manager by clicking the + icon and then selecting 'Add package from git URL...'
 
+![image](https://github.com/Thundernerd/Unity3D-NSubstitute/assets/5531467/a08a3dd9-8c65-46ba-9e31-fef578f4c6a5)
 
-
-and using the following url: `https://github.com/Thundernerd/Unity3D-nsubstitute.git`
+and using the following url: `https://github.com/Thundernerd/Unity3D-NSubstitute.git`
 
 
 4. Installing from git by adding the following line to your manifest.json
 ```
-"net.tnrd.nsubstitute": "https://github.com/Thundernerd/Unity3D-nsubstitute.git"
+"net.tnrd.nsubstitute": "https://github.com/Thundernerd/Unity3D-NSubstitute.git"
 ```
 
 Original readme below this line
