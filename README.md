@@ -1,11 +1,36 @@
+## Installation
+1. The package is available on the [openupm registry](https://openupm.com). You can install it via [openupm-cli](https://github.com/openupm/openupm-cli).
+```
+openupm add net.tnrd.nsubstitute
+```
+
+2. Installing through a [Unity Package](http://package-installer.glitch.me/v1/installer/package.openupm.com/net.tnrd.nsubstitute?registry=https://package.openupm.com) created by the [Package Installer Creator](https://package-installer.glitch.me) from [Needle](https://needle.tools)
+
+[<img src="https://img.shields.io/badge/-Download-success?style=for-the-badge"/>](http://package-installer.glitch.me/v1/installer/package.openupm.com/net.tnrd.nsubstitute?registry=https://package.openupm.com)
+
+3. Installing from git through the package manager by clicking the + icon and then selecting 'Add package from git URL...'
+
+
+
+and using the following url: `https://github.com/Thundernerd/Unity3D-nsubstitute.git`
+
+
+4. Installing from git by adding the following line to your manifest.json
+```
+"net.tnrd.nsubstitute": "https://github.com/Thundernerd/Unity3D-nsubstitute.git"
+```
+
+Original readme below this line
+---
+
 NSubstitute
 ========
-[![Build status](https://ci.appveyor.com/api/projects/status/ipe7ephhy6f9bbgp/branch/master?svg=true)](https://ci.appveyor.com/project/NSubstitute/nsubstitute/branch/master) [![Travis Build Status](https://travis-ci.com/nsubstitute/NSubstitute.svg?branch=master)](https://travis-ci.com/nsubstitute/NSubstitute)
+[![Build status](https://github.com/nsubstitute/NSubstitute/actions/workflows/build_and_test.yml/badge.svg)](https://github.com/nsubstitute/NSubstitute/actions/workflows/build_and_test.yml)
 [![Nuget](https://img.shields.io/nuget/v/NSubstitute.svg)](https://www.nuget.org/packages/NSubstitute)
 
 Visit the [NSubstitute website](https://nsubstitute.github.io) for more information.
 
-## What is it?
+### What is it?
 
 NSubstitute is designed as a friendly substitute for .NET mocking libraries.
 
@@ -13,41 +38,18 @@ It is an attempt to satisfy our craving for a mocking library with a succinct sy
 
 Perfect for those new to testing, and for others who would just like to to get their tests written with less noise and fewer lambdas.
 
-## <a id="installation">Installation</a>
-1. The package is available on the [openupm registry](https://openupm.com). You can install it via [openupm-cli](https://github.com/openupm/openupm-cli).
-```
-openupm add net.tnrd.nsubstitute
-```
-2. You can also install via git url by adding these entries in your **manifest.json**
-```json
-"net.tnrd.nsubstitute": "https://github.com/Thundernerd/Unity3D-NSubstitute.git"
-```
+### Installation
 
-## Getting help
+* [NSubstitute package](https://nuget.org/List/Packages/NSubstitute)
+* Optional Roslyn analysers (recommended):
+    * For C# projects: [NSubstitute.Analyzers.CSharp](https://www.nuget.org/packages/NSubstitute.Analyzers.CSharp/)
+    * For VB projects: [NSubstitute.Analyzers.VisualBasic](https://www.nuget.org/packages/NSubstitute.Analyzers.VisualBasic/)
+
+### Getting help
 
 If you have questions, feature requests or feedback on NSubstitute please [raise an issue](https://github.com/nsubstitute/NSubstitute/issues) on our project site. All questions are welcome via our project site, but for "how-to"-style questions you can also try [StackOverflow with the \[nsubstitute\] tag](https://stackoverflow.com/tags/nsubstitute), which often leads to very good answers from the larger programming community. StackOverflow is especially useful if your question also relates to other libraries that our team may not be as familiar with (e.g. NSubstitute with Entity Framework). You can also head on over to the [NSubstitute discussion group](https://groups.google.com/group/nsubstitute) if you prefer.
 
-## Unity setup
-
-This project has been tested with Unity **2019.1.0f2** and **2019.4.1f1**. The setup is slightly different among Unity versions.
-
-The code you want to use for Unit Tests are required to be accompanied by an Assembly Definition. If you are unfamiliar with how to set these up please follow the [Unity Manual](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html).
-Please make sure you are familiar with the **Unity Test Framework**. The manual is available [over here](https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/index.html).
-
-**Note**: Not applicable to Unity 2019.1.0f2 (and maybe some versions before 2019.4.1f1)
-
-You need to make sure that reference (in no particular order) the following assembly references:
-- Castle.Core.dll
-- NSubstitute.dll
-- System.Threading.Tasks.Extensions.dll
-
-Your assembly references overview should look somewhat like this.
-
-![assembly references overview](./~Documentation/assembly_references.png)
-
-After you've applied the settings you should be good to go to use NSubstitute within your Unit Tests. 
-
-## Basic use
+### Basic use
 
 Let's say we have a basic calculator interface:
 
@@ -146,15 +148,16 @@ _calculator.PoweringUp += Raise.Event<Action>();
 Assert.That(eventWasRaised);
 ```
 
-## Other libraries you may be interested in
+### Building
+
+NSubstitute and its tests can be compiled and run using Visual Studio and Visual Studio for Mac. Note that some tests are marked `[Pending]` and are not meant to pass at present, so it is a good idea to exclude tests in the Pending category from test runs.
+
+There are also build scripts in the `./build` directory for command line builds, and CI configurations in the project root.
+
+To do [full builds](https://github.com/nsubstitute/NSubstitute/wiki/Release-procedure) you'll also need Ruby, as the jekyll gem is used to generate the website.
+
+### Other libraries you may be interested in
 
 * [Moq](https://github.com/Moq/moq4/wiki/Quickstart): the original Arrange-Act-Assert mocking library for .NET, and a big source of inspiration for NSubstitute.
 * [FakeItEasy](https://fakeiteasy.github.io/): another modern mocking library for .NET. If you're not sold on NSubstitute's syntax, try FIE!
 * [substitute.js](https://github.com/ffMathy/FluffySpoon.JavaScript.Testing): a mocking library for TypeScript inspired by NSubstitute's syntax (`@fluffy-spoon/substitute` on NPM)
-
-## Support
-Unfortunately I have not seen any source to support the Nsubstitute team by means of donating. Please spread your love at the original repository located here: [nsubstitute/NSubstitute](https://github.com/nsubstitute/NSubstitute)
-
-If you want to support my work you are in no way obliged to, but it is very much appreciated. You can support me by donating through the button below.
-
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J11GEYY)
